@@ -1,0 +1,13 @@
+delimiter //
+create trigger t1
+before insert
+on mark_details3
+for each row
+begin
+set new.total=new.mark1+new.mark2+new.mark3;
+set new.per=(new.total*100)/300;
+if per<80 && per>100
+
+end if ;
+end;
+//
